@@ -2,3 +2,4 @@ flask
 flask-cors
 gunicorn  # Needed for production deployment
 requests
+openai
