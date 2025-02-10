@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # Backend API URL (Ensure Flask is running)
-BACKEND_URL = "http://0.0.0.0:10000"
+BACKEND_URL = "https://chatpoly-2.onrender.com"
 
 # Page Title
 st.title("SmartPoly - Your Polymer Chat Assistant")
