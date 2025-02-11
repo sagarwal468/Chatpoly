@@ -53,7 +53,7 @@ if st.button("Send") and user_input.strip():
         if response.status_code == 200:
             bot_reply = response.json().get("response", "Error: No response from server")
             st.session_state.messages.append(("assistant", bot_reply))
-            st.experimental_rerun()
+            streamlit.rerun()
         else:
             st.error("Failed to get response. Check API key and server status.")
 
