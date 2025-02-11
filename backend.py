@@ -25,7 +25,7 @@ def chat():
                       {"role": "user", "content": user_message}]
         )
 
-        bot_response = response["choices"][0]["message"]["content"]
+        bot_response = response.choices[0].message.content
         return jsonify({"response": bot_response})
 
     except openai.error.OpenAIError as e:  # Correct exception handling
