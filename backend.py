@@ -16,13 +16,13 @@ def chat():
             return jsonify({"response": "Error: No API key provided."}), 400
 
         openai.api_key = api_key
-        response = openai.ChatCompletion.create(
+        response = openai.chat.completions.create(
             model="ft:gpt-3.5-turbo-0125:ramprasad-group:90-10f1:A3SX7B9n",  
             messages=[{"role": "system", "content": "You are a helpful assistant."},
                       {"role": "user", "content": user_message}]
         )
 
-        bot_response = response["choices"][0]["message"]["content"]
+        bot_response = response.choices[0].message.content
         return jsonify({"response": bot_response})
 
     except openai.OpenAIError as e:  # Fix: Correct way to catch OpenAI errors
